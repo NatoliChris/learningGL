@@ -4,9 +4,9 @@
 Chapters:
 1. Setups and basic concepts
 2. Shapes
-    1. Triangle
-    2. Square
-    3. Circles
+  1. Triangle
+  2. Square
+  3. Circles
 
 *Last Update: 14/05/2015*
 

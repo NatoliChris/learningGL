@@ -1,6 +1,5 @@
 #include <GLFW/glfw3.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
 #include <Math.h>
 
 #define PI 3.141592653589793
@@ -25,8 +24,23 @@ void render(GLFWwindow* window){
      glLoadIdentity();
      //glRotatef((float) glfwGetTime() * 50.f, 0.f, 0.f, 1.f);
      glBegin(GL_POLYGON);
-     for(float angle = 0; angle < 2*PI; angle += 0.01){
-         glColor3f(0.f, 1.f, 1.f);
+     float r = 2*PI;
+     for(float angle = 0; angle < r; angle += 0.01){
+/* Colouring circle multiple colours
+        if(angle > 0 && angle <= (1/3.0)*r){
+            glColor3f(0.f, 1.f, 0.f);
+         } else if(angle > (1/3.0)*r && angle <=(2/3.0)*r){
+            glColor3f(1.f, 0.f, 0.f);
+         } else {
+            glColor3f(0.f, 0.f, 1.f);
+         }
+*/
+         //making pacman
+         if(angle > (1.5/3.0)*r && angle <= (1.8/3.0)*r){
+            glColor3f(0.f, 0.f, 0.f);
+         } else {
+            glColor3f(1.f, 1.f, 0.f);
+         }
          glVertex3f(0.2f*cos(angle), 0.2f*sin(angle), 0);
      }
      glEnd();
