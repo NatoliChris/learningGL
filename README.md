@@ -1,5 +1,5 @@
 # Learning GL 
-*Huge shoutout to Scott Greenup! Inspirational person who has unparallelled ability at coding! Check out his [github](https://github.com/scottgreenup).
+***Huge shoutout to Scott Greenup! Inspirational person who has unparallelled ability at coding! Check out his [github](https://github.com/scottgreenup).***
 
 Chapters:
 1. Setups and basic concepts
