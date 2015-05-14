@@ -1,6 +1,9 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <Math.h>
+
+#define PI 3.141592653589793
 
 void render(GLFWwindow* window){
     float ratio;
@@ -21,20 +24,26 @@ void render(GLFWwindow* window){
 
      glLoadIdentity();
      //glRotatef((float) glfwGetTime() * 50.f, 0.f, 0.f, 1.f);
+     glBegin(GL_POLYGON);
+     for(float angle = 0; angle < 2*PI; angle += 0.01){
+         glColor3f(0.f, 1.f, 1.f);
+         glVertex3f(0.2f*cos(angle), 0.2f*sin(angle), 0);
+     }
+     glEnd();
 
      glBegin(GL_QUADS);
      glColor3f(1.f, 1.f, 1.f);
-     glVertex3f(0.2, 0.2, 0.f);
+     glVertex3f(-0.4, 0.8, 0.f);
 
      glColor3f(0.f, 1.f, 0.f);
-     glVertex3f(0.2, -0.2, 0.f);
+     glVertex3f(-0.4, 0.4, 0.f);
 
      glColor3f(1.f, 0.f, 0.f);
-     glVertex3f(-0.2, -0.2, 0.f);
+     glVertex3f(-0.8, 0.4, 0.f);
 
 
      glColor3f(0.f, 0.f, 1.f);
-     glVertex3f(-0.2, 0.2, 0.f);
+     glVertex3f(-0.8, 0.8, 0.f);
      glEnd();
 
      glBegin(GL_TRIANGLES);
@@ -48,6 +57,7 @@ void render(GLFWwindow* window){
      glVertex3f(0.4f, 0.4f, 0.f);
 
      glEnd();
+
      glfwSwapBuffers(window);
 }
 

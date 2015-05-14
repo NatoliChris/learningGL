@@ -3,9 +3,10 @@
 
 Chapters:
 1. Setups and basic concepts
-2. Shapes 
+2. Shapes
     1. Triangle
     2. Square
+    3. Circles
 
 *Last Update: 14/05/2015*
 
@@ -62,5 +63,17 @@ glVertex3f(-0.2, -0.2, 0.f);
 
 glColor3f(0.f, 0.f, 1.f);
 glVertex3f(-0.2, 0.2, 0.f);
+glEnd();
+```
+
+### Circles
+Circles are a bit of a play around, you're going to have to `` #include <math.h> ``
+```c++
+float rad = 0.2f;
+glBegin(GL_POLYGON);
+for(float angle = 0; angle < 2*PI; angle += 0.01){
+    glColor3f(0.f, 1.f, 1.f);
+    glVertex3f(rad*cos(angle), rad*sin(angle), 0);
+}
 glEnd();
 ```
